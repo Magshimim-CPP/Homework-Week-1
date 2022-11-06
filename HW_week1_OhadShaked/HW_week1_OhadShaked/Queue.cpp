@@ -13,7 +13,7 @@ void initQueue(Queue* q, unsigned int size)
 	q->InsertIndex = ZERO;
 	q->ReleaseIndex = ZERO;
 	q->size = size;
-	q->values = (int*)malloc(size * sizeof(int));
+	q->values = new int[size];
 }
 
 void cleanQueue(Queue* q)
@@ -33,7 +33,7 @@ void enqueue(Queue* q, unsigned int newValue)
 	}
 	else 
 	{
-		printf("ERROR: Queue is full!\n");
+		cout << "ERROR: Queue is full!\n" << endl;
 	}
 }
 
@@ -49,7 +49,7 @@ int dequeue(Queue* q)
 	}
 	else
 	{
-		printf("ERROR: Queue is empty!\n");
+		cout << "ERROR: Queue is empty!\n" << endl;
 		return -ONE;
 	}
 	
