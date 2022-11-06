@@ -21,4 +21,6 @@ int dequeue(Queue* q); // return element in top of queue, or -1 if empty
 bool isEmpty(Queue* s);
 bool isFull(Queue* s);
 
+int AddIndexInRange(int index, int size);
+
 #endif /* QUEUE_H */

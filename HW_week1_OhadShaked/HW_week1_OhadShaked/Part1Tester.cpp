@@ -1,10 +1,13 @@
- #include "Queue.h"
- #include <iostream>
- #include <sstream>
- #include <windows.h> // WinApi header - needed for setting console color
+#include "Queue.h"
+#include <sstream>
+#include <stdio.h>
+#include <iostream>
+#include <stdlib.h>
+#include <windows.h> // WinApi header - needed for setting console color
 
- using std::cout;
- using std::endl;
+using namespace std;
+using std::cout;
+using std::endl;
 
  #define GREEN 2
  #define DARK_RED 4
