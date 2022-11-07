@@ -3,16 +3,16 @@
 
 
 /* a queue contains positive integer values. */
-typedef struct LinkedList
+typedef struct Node
 {
 	unsigned int value;
-	LinkedList* next;
-	LinkedList* head;
-	LinkedList* tail;
+	Node* next;
+	Node* head;
+	Node* tail;
 
-} LinkedList;
+} Node;
 
-void AddNode(unsigned int value);
-void RemoveNode();
+void AddNode(Node** head, unsigned int newValue);
+void RemoveNode(Node** head);
 
 #endif /* LINKEDLIST_H */
