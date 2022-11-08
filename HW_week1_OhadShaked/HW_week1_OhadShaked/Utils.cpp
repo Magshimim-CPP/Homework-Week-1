@@ -27,5 +27,5 @@ void reverse(int* nums, unsigned int size)
 
 int* reverse10()
 {
-	
+	return NULL;
 }

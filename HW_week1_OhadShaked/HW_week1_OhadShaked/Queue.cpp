@@ -16,6 +16,7 @@ Output: none.
 */
 void initQueue(Queue* q, unsigned int size)
 {
+	//setting queue properties to defult values.
 	q->InsertIndex = ZERO;
 	q->ReleaseIndex = ZERO;
 	q->size = size;
@@ -29,35 +30,56 @@ Output: none.
 */
 void cleanQueue(Queue* q)
 {
+	//looping through the values array of the queue, and setting the values to 0.
 	for (int i = ZERO; i < q->size; i++)
 	{
 		q->values[i] = ZERO;
 	}
 }
 
+/*
+Function adds a new given value to the current InsertIndex, and moves the insertion index number 1 forward.
+(or printing error if the queue is full).
+Input: Queue* q, unsigned int newValue
+Output: none.
+*/
 void enqueue(Queue* q, unsigned int newValue)
 {
+	//If the queue isn't full
 	if (!isFull(q))
 	{
+		//setting the 'InsertIndex' slot in the values array to the given 'newValue'.
 		q->values[q->InsertIndex] = newValue;
+		//moving the InsertIndex one slot forward.
 		q->InsertIndex = AddIndexInRange((q->InsertIndex), (q->size));
 	}
+	//if the queue was full, printing error message.
 	else 
 	{
 		cout << "ERROR: Queue is full!\n" << endl;
 	}
 }
 
+/*
+Function returns the element in the top of the queue, or -1 if the given queue is empty.
+Input: Queue* q
+Output: the value stored in the current ReleaseIndex, (or -1 if the queue is empty).
+*/
 int dequeue(Queue* q)
 {
 	int value = ZERO;
 
+	//If the queue isn't empty
 	if (!isEmpty(q))
 	{
+		//setting 'value' to the current value stored in the ReleaseIndex of the values array.
 		value = q->values[q->ReleaseIndex];
+		//moving the ReleaseIndex one slot forward.
 		q->ReleaseIndex = AddIndexInRange(q->ReleaseIndex, q->size);
+		//returning the value.
 		return value;
 	}
+	//if the queue was empty, printing error message and returning -1.
 	else
 	{
 		cout << "ERROR: Queue is empty!\n" << endl;
@@ -73,6 +95,7 @@ Output: true/false based on the result.
 */
 bool isEmpty(Queue* s)
 {
+	//if the InsertIndex is the same number as the ReleaseIndex, retutning true (empty).
 	if (s->InsertIndex == s->ReleaseIndex)
 	{
 		return true;
@@ -87,6 +110,7 @@ Output: true/false based on the result.
 */
 bool isFull(Queue* s)
 {
+	//if the next InsertIndex is equal to the current ReleaseIndex (queue is full), returning true.
 	if (AddIndexInRange((s->InsertIndex), (s->size)) == (s->ReleaseIndex))
 	{
 		return true;

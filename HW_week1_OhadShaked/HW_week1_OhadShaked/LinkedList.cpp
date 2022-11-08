@@ -10,7 +10,9 @@ using namespace std;
 #define ONE 1
 
 /*
-Function adds a 
+Function create and adds a new node with the given value to the head of the linked list.
+Input: Node** head, unsigned int newValue
+Output: none.
 */
 void AddNode(Node** head, unsigned int newValue)
 {
@@ -18,11 +20,15 @@ void AddNode(Node** head, unsigned int newValue)
 	Node* newNode = new Node();
 	//setting the node's value to the given value.
 	newNode->value = newValue;
-	//placing the node at the head of the linked list.
+	//the 'next' pointer of newNode will point to the current head of the list.
 	newNode->next = *head;
-	//*head = newNode;//
+	//making newNode the new head of the list.
+	*head = newNode;
 }
 
+/*
+
+*/
 void RemoveNode(Node** head)
 {
 	//making a temp node for the freeing and deleting proccess (if needed).

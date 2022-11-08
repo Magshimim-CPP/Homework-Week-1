@@ -5,14 +5,14 @@
 /* a queue contains positive integer values. */
 typedef struct Node
 {
+	//Node structure values.
 	unsigned int value;
 	Node* next;
 	Node* head;
-	Node* tail;
 
 } Node;
 
-void AddNode(Node** head, unsigned int newValue);
+void AddNode(Node** head, unsigned int newValue); // Create and adds a new node with the given value to the head of the linked list.
 void RemoveNode(Node** head);
 
 #endif /* LINKEDLIST_H */
