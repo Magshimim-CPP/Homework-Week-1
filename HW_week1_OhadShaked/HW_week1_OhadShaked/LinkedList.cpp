@@ -5,13 +5,17 @@
 
 using namespace std;
 
+//setting constant define variables
 #define ZERO 0
 #define ONE 1
 
+/*
+Function adds a 
+*/
 void AddNode(Node** head, unsigned int newValue)
 {
 	//making a new node to contain the given value.
-	Node* newNode = new Node;
+	Node* newNode = new Node();
 	//setting the node's value to the given value.
 	newNode->value = newValue;
 	//placing the node at the head of the linked list.
@@ -22,7 +26,7 @@ void AddNode(Node** head, unsigned int newValue)
 void RemoveNode(Node** head)
 {
 	//making a temp node for the freeing and deleting proccess (if needed).
-	Node* temp = new Node;
+	Node* temp = new Node();
 
 	//if the node exist's (not NULL).
 	if (*head)
