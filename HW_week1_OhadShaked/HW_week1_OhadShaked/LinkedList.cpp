@@ -27,7 +27,9 @@ void AddNode(Node** head, unsigned int newValue)
 }
 
 /*
-
+Function deletes the current head of the list, and sets the next node (head->next) to be the head.
+Input: Node** head
+Output: none.
 */
 void RemoveNode(Node** head)
 {

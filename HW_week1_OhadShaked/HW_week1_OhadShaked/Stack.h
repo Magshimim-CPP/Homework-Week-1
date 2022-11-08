@@ -11,14 +11,14 @@ typedef struct Stack
 	
 } Stack;
 
-void push(Stack* s, unsigned int element);
-int pop(Stack* s); // Return -1 if stack is empty
+void push(Stack* s, unsigned int element); 
+int pop(Stack* s); // Returns the value stored in the current head node (or -1 if the stack is empty).
 
 void initStack(Stack* s); // Initializes the given Stack
-void cleanStack(Stack* s);
+void cleanStack(Stack* s); // Cleans the value in each node (sets to zero), and deletes the node.
 
 bool isEmpty(Stack* s); // Checks if the given Stack is empty.
 
-//bool isFull(Stack* s); no need for "isFull" if there is no size limit
+//bool isFull(Stack* s); //no need for "isFull" if there is no size limit
 
 #endif // STACK_H

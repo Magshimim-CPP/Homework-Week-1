@@ -34,22 +34,42 @@ bool isEmpty(Stack* s)
     return false;
 }
 
+/*
+Function returns the value stored in the head node (or -1 if the stack is empty).
+Input: Stack* s
+Output: the value stored in the current head node, (or -1 if the stack is empty).
+*/
 int pop(Stack* s)
 {
     Node* temp = NULL;
     int return_val = ZERO;
 
-    temp = s->head;
+    //If the stack isn't empty
+    if (!isEmpty(s))
+    {
+        temp = s->head;
 
-    return_val = temp->value;
+        return_val = temp->value;
 
-    s->head = s->head->next;
+        s->head = s->head->next;
 
-    delete temp;
+        delete temp;
 
-    return return_val;
+        return return_val;
+    }
+    //if the stack is empty, printing error message and returning -1.
+    else
+    {
+        cout << "ERROR: Stack is empty!\n" << endl;
+        return -ONE;
+    }
 }
 
+/*
+Function cleans the value in each node (sets to zero), and deletes the node.
+Input: Stack* s
+Output: none.
+*/
 void cleanStack(Stack* s)
 {
     Node* temp = NULL;
@@ -60,10 +80,17 @@ void cleanStack(Stack* s)
 
         s->head = s->head->next;
 
+        temp->value = ZERO;
+
         delete temp;
     }
 }
 
+/*
+Function initializes the given Stack (sets the head node to null.
+Input: Stack* s
+Output: none.
+*/
 void initStack(Stack* s)
 {
     s->head = NULL;

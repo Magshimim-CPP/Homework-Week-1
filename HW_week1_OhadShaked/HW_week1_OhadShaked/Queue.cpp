@@ -79,7 +79,7 @@ int dequeue(Queue* q)
 		//returning the value.
 		return value;
 	}
-	//if the queue was empty, printing error message and returning -1.
+	//if the queue is empty, printing error message and returning -1.
 	else
 	{
 		cout << "ERROR: Queue is empty!\n" << endl;
